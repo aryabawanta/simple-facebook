@@ -1,0 +1,27 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    &__logo {
+        display: flex;
+        cursor: pointer;
+    }
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &__item {
+            display: flex;
+            padding: 10px;
+            margin: 0px 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            &:hover {
+                color: #4080ff;
+            }
+        }
+    }
+}
