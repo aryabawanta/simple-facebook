@@ -6,8 +6,8 @@ export default class Post extends React.Component {
         super(props);
         this.state = {
             title: props.title,
-            subtitle: props.subtitle,
-            content: props.content,
+            userId: props.userId,
+            body: props.body,
             edit: false,
         };
     }
@@ -20,10 +20,10 @@ export default class Post extends React.Component {
                         {this.state.title}
                     </div>
                     <div className="posts__header__subtitle">
-                        {this.state.subtitle}
+                        user id : {this.state.userId}
                     </div>
                 </div>
-                <div className="posts__content">{this.state.content}</div>
+                <div className="posts__content">{this.state.body}</div>
             </div>
         );
     }
