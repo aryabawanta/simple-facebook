@@ -1,5 +1,6 @@
 import React from "react";
-import Post from "../../components/post";
+import PostList from "../../components/post/PostList";
+import { Switch, Route } from "react-router-dom";
 import "../../assets/scss/main.scss";
 
 export default class Main extends React.Component {
@@ -15,22 +16,18 @@ export default class Main extends React.Component {
     }
 
     render() {
-        const posts = this.state.posts;
-        let render_posts = [];
-        for (let index = 0; index < posts.length; index++) {
-            const post = posts[index];
-            render_posts.push(
-                <Post
-                    key={index}
-                    title={post.title}
-                    userId={post.userId}
-                    body={post.body}
-                />
-            );
-        }
         return (
             <div className="container">
-                <div className="content">{render_posts}</div>
+                <div className="content">
+                    <Switch>
+                        <Route exact path="/">
+                            <PostList posts={this.state.posts} />
+                        </Route>
+                        <Route path="/edit/:id">
+                            <div>Edit</div>
+                        </Route>
+                    </Switch>
+                </div>
             </div>
         );
     }
